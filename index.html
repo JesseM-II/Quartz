@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>QUARTZ</title>
+  </head>
+  <body>
+    <header>
+      <h1>TO-DOS</h1>
+      <button class="light-or-dark-mode-selector"></button>
+    </header>
+
+    <div class="light-or-dark-mode-button-container display-none">
+      <button
+        title="Switch to System Default"
+        class="system-default light-or-dark-mode-buttons"
+      >
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+        Default
+      </button>
+
+      <button
+        title="Switch to Light Mode"
+        class="light-mode light-or-dark-mode-buttons"
+      >
+        <i class="fa-regular fa-sun" aria-hidden="true"></i> Light
+      </button>
+
+      <button
+        title="Switch to Dark Mode"
+        class="dark-mode light-or-dark-mode-buttons"
+      >
+        <i class="fa-regular fa-moon" aria-hidden="true"></i> Dark
+      </button>
+    </div>
+
+    <div class="add-to-do-list-container">
+      <input
+        type="text"
+        class="to-do-list-name-input"
+        placeholder="to do list name..."
+        autofocus
+      />
+
+      <button class="add-to-do-list-btn" title="Create To Do List">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="to-do-lists"></div>
+
+    <section class="to-do-list-section display-none opacity-0" loading="lazy">
+      <p class="display-none index-of-list-being-displayed"></p>
+
+      <div class="display-flex justify-content-space-between">
+        <button
+          title="Delete To Do List"
+          class="delete-to-do-list-btn to-do-list-section-buttons"
+        >
+          <i class="fa fa-square-minus" aria-hidden="true"></i>
+        </button>
+        <button
+          title="Close To Do List"
+          class="close-to-do-list-section to-do-list-section-buttons"
+        >
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <textarea
+        title="Edit To Do List Name"
+        class="to-do-list-name-in-section"
+        spellcheck="false"
+      ></textarea>
+
+      <div class="add-task-container">
+        <input
+          type="text"
+          class="task-name-input"
+          placeholder="enter task name..."
+        />
+
+        <button title="Create Task" class="add-task-btn">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="tasks"></div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

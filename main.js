@@ -59,6 +59,8 @@ toDoListNameInput.addEventListener("keypress", (e) => {
 
 let GTCA = "grid-template-columns_auto";
 
+let body = document.body;
+
 function displayToDos() {
   let toDoListsHtml = "";
 
@@ -121,9 +123,12 @@ function displayToDos() {
 
       setTimeout(() => {
         switchClass(toDoListSection, "opacity-1", "opacity-0");
+        toDoListSection.scrollIntoView({ behavior: "instant", block: "start" });
       }, 300);
 
       document.querySelector(".to-do-list-name-input").blur();
+
+      switchClass(body, "oveflow-y_hidden", "oveflow-y_auto");
     });
   });
 }
@@ -132,6 +137,7 @@ function closeToDoListSection() {
   switchClass(toDoListSection, "opacity-0", "opacity-1");
 
   setTimeout(() => {
+    switchClass(body, "oveflow-y_auto", "oveflow-y_hidden");
     switchClass(toDoListSection, "display-none", "display-block");
   }, 500);
 
@@ -326,13 +332,13 @@ function darkHtml() {
 }
 
 function lightMode() {
-  document.body.style.colorScheme = "light";
-  switchClass(document.body, "light-mode", "dark-mode");
+  body.style.colorScheme = "light";
+  switchClass(body, "light-mode", "dark-mode");
 }
 
 function darkMode() {
-  document.body.style.colorScheme = "dark";
-  switchClass(document.body, "dark-mode", "light-mode");
+  body.style.colorScheme = "dark";
+  switchClass(body, "dark-mode", "light-mode");
 }
 
 function pageMode() {

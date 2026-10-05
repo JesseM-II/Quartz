@@ -89,6 +89,14 @@
   opacity: 1;
 }
 
+.oveflow-y_auto {
+  overflow-y: auto;
+}
+
+.oveflow-y_hidden {
+  overflow-y: hidden;
+}
+
 .justify-content-space-between {
   justify-content: space-between;
 }
@@ -106,7 +114,6 @@
 }
 
 body {
-  overflow-y: auto;
   background-color: var(--body-background-color);
   transition: 1s;
 }
